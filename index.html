@@ -1,16 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SlowDeath</title>
+    <title>Slow Death - L'Inévitable</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Titre SlowDeath</h1>
-    <h2>yo</h2>
 
+    <!-- ===============================
+         PAGE CHAOS INTERNET (NE PLUS TOUCHER)
+         =============================== -->
+    <div id="internet-chaos">
+
+        <marquee behavior="alternate" scrollamount="6" class="chaos-marquee">
+            🐌 YOU CANNOT ESCAPE 🐌 YOU CANNOT ESCAPE 🐌
+        </marquee>
+
+        <div class="popup chaos-box" style="top:10%; left:5%;">FREE RAM DOWNLOAD</div>
+        <div class="popup chaos-box" style="top:25%; left:60%;">CLICK HERE TO LIVE</div>
+        <div class="popup chaos-box" style="top:50%; left:20%;">ERROR 0x000SNAIL</div>
+        <div class="popup chaos-box" style="top:70%; left:70%;">ADVERTISEMENT: WIN A SNAIL!</div>
+        <div class="popup chaos-box" style="top:85%; left:40%;">SYSTEM ALERT: BROWSER INFECTED</div>
+
+        <div class="counter" style="bottom:10%; left:5%;">VISITORS ONLINE: <span id="fakeVisitors">666</span></div>
+        <div class="random-text" style="top:80%; right:8%;">
+            last update: 2009<br>
+            best viewed on 800x600<br>
+            sound required
+        </div>
+
+    </div>
+
+    <!-- =============================== -->
+
+
+    <!-- UI DU JEU -->
+    <div id="ui-container">
+        <div id="hud">⏱️ <span id="time">0.0</span>s | 🏆 <span id="best">0.0</span>s</div>
+        <div id="powerLabel">Snail Power</div>
+        <div id="powerBarContainer">
+            <div id="powerBar"></div>
+        </div>
+        <div id="powerIcons">
+            <span class="power" id="powerInvert">🖱️</span>
+            <span class="power" id="powerShake">💢</span>
+            <span class="power" id="powerPull">🧲</span>
+        </div>
+    </div>
+
+    <!-- CONTENU CENTRAL -->
+    <div id="gameContent">
+        <h1 class="obstacle" id="mainTitle">SLOW DEATH</h1>
+        <p class="obstacle" id="breakableText">
+            L'escargot grimpe sur les mots, il déchire la réalité.
+        </p>
+        <div class="box obstacle">SURVIE</div>
+        <button id="evilButton" class="obstacle">NE CLIQUE PAS ICI</button>
+    </div>
+
+    <!-- SCREENS -->
+    <div id="startScreen">
+        <h1>🐌 Slow Death</h1>
+        <p>Le sel est ta seule arme.</p>
+        <button id="startBtn">COMMENCER</button>
+    </div>
+
+    <div id="gameOver">
+        <h1 id="deathMessage">GAME OVER</h1>
+        <p id="finalTime"></p>
+        <button id="restartBtn">RÉESSAYER</button>
+    </div>
+
+    <!-- GAME OBJECTS -->
+    <div id="fakeCursor"></div>
+    <div id="snail">🐌</div>
+
+    <script src="snail.js"></script>
+    <script src="traps.js"></script>
+    <script src="game.js"></script>
 </body>
 
 </html>
