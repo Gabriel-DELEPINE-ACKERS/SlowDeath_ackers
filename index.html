@@ -10,11 +10,9 @@
 
 <body>
 
-    <!-- ===============================
-         PAGE CHAOS INTERNET (NE PLUS TOUCHER)
-         =============================== -->
-    <div id="internet-chaos">
+    <div id="danger-border"></div>
 
+    <div id="internet-chaos">
         <marquee behavior="alternate" scrollamount="6" class="chaos-marquee">
             🐌 YOU CANNOT ESCAPE 🐌 YOU CANNOT ESCAPE 🐌
         </marquee>
@@ -31,13 +29,8 @@
             best viewed on 800x600<br>
             sound required
         </div>
-
     </div>
 
-    <!-- =============================== -->
-
-
-    <!-- UI DU JEU -->
     <div id="ui-container">
         <div id="hud">⏱️ <span id="time">0.0</span>s | 🏆 <span id="best">0.0</span>s</div>
         <div id="powerLabel">Snail Power</div>
@@ -48,10 +41,11 @@
             <span class="power" id="powerInvert">🖱️</span>
             <span class="power" id="powerShake">💢</span>
             <span class="power" id="powerPull">🧲</span>
+            <span class="power" id="powerShrink">🔲</span>
         </div>
+        <div id="shield-ui">🛡️ Boucliers: <span id="shieldCount">3</span></div>
     </div>
 
-    <!-- CONTENU CENTRAL -->
     <div id="gameContent">
         <h1 class="obstacle" id="mainTitle">SLOW DEATH</h1>
         <p class="obstacle" id="breakableText">
@@ -61,7 +55,6 @@
         <button id="evilButton" class="obstacle">NE CLIQUE PAS ICI</button>
     </div>
 
-    <!-- SCREENS -->
     <div id="startScreen">
         <h1>🐌 Slow Death</h1>
         <p>Le sel est ta seule arme.</p>
@@ -74,8 +67,18 @@
         <button id="restartBtn">RÉESSAYER</button>
     </div>
 
-    <!-- GAME OBJECTS -->
+    <div id="power-alert"></div>
+
     <div id="fakeCursor"></div>
+
+    <div id="shield">
+        <div class="shield-orbit">
+            <span class="orbit-icon">🛡️</span>
+            <span class="orbit-icon">🛡️</span>
+            <span class="orbit-icon">🛡️</span>
+        </div>
+    </div>
+
     <div id="snail">🐌</div>
 
     <script src="snail.js"></script>
