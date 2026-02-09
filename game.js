@@ -16,6 +16,22 @@ document.addEventListener("mousedown", () => {
     if (gameState === "PLAYING") placeSalt(cursorX, cursorY);
 });
 
+// === INITIALISER LE CURSEUR ===
+document.getElementById("fakeCursor").style.display = "block";
+
+// === ANIMATION DU CURSEUR EN CONTINU ===
+function updateCursor() {
+    cursorX += (mouseX - cursorX) * 0.15;
+    cursorY += (mouseY - cursorY) * 0.15;
+
+    const fc = document.getElementById("fakeCursor");
+    fc.style.left = cursorX + "px";
+    fc.style.top = cursorY + "px";
+
+    requestAnimationFrame(updateCursor);
+}
+updateCursor();
+
 document.getElementById("startBtn").onclick = startGame;
 document.getElementById("restartBtn").onclick = startGame;
 
@@ -34,7 +50,7 @@ document.getElementById("evilButton").onclick = (e) => {
 function startGame() {
     gameState = "PLAYING";
     document.body.style.cursor = "none";
-    document.getElementById("fakeCursor").style.display = "block";
+    document.documentElement.style.cursor = "none";
     document.getElementById("startScreen").style.display = "none";
     document.getElementById("gameOver").style.display = "none";
 
@@ -116,6 +132,7 @@ function triggerSnailPower() {
 function endGame() {
     gameState = "GAMEOVER";
     document.body.style.cursor = "auto";
+    document.documentElement.style.cursor = "auto";
     document.getElementById("gameOver").style.display = "flex";
     const time = (performance.now() - startTime) / 1000;
     document.getElementById("finalTime").textContent = `Temps : ${time.toFixed(1)}s`;

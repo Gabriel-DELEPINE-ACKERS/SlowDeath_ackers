@@ -177,6 +177,8 @@
     pointer-events: none;
     z-index: 101;
     display: none;
+    border: 2px solid black;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
 }
 
 /* =========================
@@ -305,17 +307,6 @@ button:hover {
     opacity: 0.7;
     color: #ffcc00;
     text-shadow: 1px 1px 2px black;
-}
-
-/* Cache la flèche système sur toute la page */
-html,
-body {
-    cursor: none !important;
-}
-
-/* Cache la flèche même quand on survole des boutons ou le texte */
-* {
-    cursor: none !important;
 }
 
 /* On s'assure que le curseur rouge reste visible et au-dessus de tout */
